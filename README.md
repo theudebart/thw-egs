@@ -144,6 +144,7 @@ Aktuell sind folgende Elemente implementiert:
 | AnkSt300  | Ankerstab 300cm                    | nein                  | Drehungen (RX, RY, RZ)                        |
 | FM        | Flanschmutter                      | nein                  | Drehungen (RX, RY, RZ)                        |
 |           |                                    |                       | _oUP_ wenn keine Unterlagsplatte              |
+| BPx/y/h   | Betonplatte (x * y * h cm)         | nein                  |                                               |
 
 ### Daten ergänzen - eigene Konstruktionen
 

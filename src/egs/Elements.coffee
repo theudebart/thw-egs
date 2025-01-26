@@ -15,6 +15,7 @@ Betonblockstein = require("./elements/Betonblockstein")
 EuroPalette = require("./elements/EuroPalette")
 Ankerstab = require("./elements/Ankerstab")
 Flanschmutter = require("./elements/Flanschmutter")
+Betonplatte = require("./elements/Betonplatte")
 
 class EGS_Elements
 	
@@ -139,6 +140,9 @@ class EGS_Elements
 					length = name.slice(2)
 					length = parseInt(length)
 					new Kantholz length, x, y, h, direction, special
+				else if (name.startsWith('BP'))
+					[length,width,height] = name.slice(2).split('/')
+					new Betonplatte parseFloat(length), parseFloat(width), parseFloat(height), x, y, h
 				else throw new Error('Unbekanntes Element')
 
 module.exports = EGS_Elements
