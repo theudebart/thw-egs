@@ -5,7 +5,7 @@ module.exports = Backbone.View.extend
 	container: document.getElementById 'toast-container'
 	template: require 'templates/Toast'
 
-	initialize: -> 
+	initialize: ->
 
 	alert: (title, message, type = 'info', options = {}) ->
 		templateElement = document.createElement('template')
@@ -20,7 +20,7 @@ module.exports = Backbone.View.extend
 		if options.animation is not undefined then options.animation = true
 		if options.autohide is not undefined then options.autohide = true
 
-		tpl = 
+		tpl =
 			hasTitle: title != null
 			title: title
 			message: message
