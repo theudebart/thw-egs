@@ -142,6 +142,8 @@ Aktuell sind folgende Elemente implementiert:
 | AnkSt75   | Ankerstab 75cm                     | nein                  | Drehungen (RX, RY, RZ)                        |
 | AnkSt150  | Ankerstab 150cm                    | nein                  | Drehungen (RX, RY, RZ)                        |
 | AnkSt300  | Ankerstab 300cm                    | nein                  | Drehungen (RX, RY, RZ)                        |
+| FM        | Flanschmutter                      | nein                  | Drehungen (RX, RY, RZ)                        |
+|           |                                    |                       | _oUP_ wenn keine Unterlagsplatte              |
 
 ### Daten ergänzen - eigene Konstruktionen
 
