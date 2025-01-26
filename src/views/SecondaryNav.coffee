@@ -4,8 +4,8 @@ Package = require "../../package.json"
 module.exports = Backbone.View.extend
 	el: document.getElementById 'secondaryNav'
 	template: require 'templates/SecondaryNav'
-	
-	events: 
+
+	events:
 		"click .step-rel": "incrStep"
 		"click .step-abs": "setStep"
 		"click .step-auto": "setStepper"
@@ -18,7 +18,7 @@ module.exports = Backbone.View.extend
 		"click .bg-set": "setBackgroundColor"
 		"click .export-image": "exportImage"
 		"click .export-image-transparent": "exportImageTransparent"
-	
+
 	setStepper: (e) ->
 		@app.view.EGS.setStepper parseInt(e.target.dataset.val)
 	incrStep: (e) ->
@@ -30,16 +30,16 @@ module.exports = Backbone.View.extend
 	setTurnRate: (e) ->
 		@app.view.EGS.setTurnRate parseFloat(e.target.dataset.setp)
 	setHeightIncr: (e) ->
-		@app.view.EGS.setHeight( parseInt(e.target.dataset.incr) , 'incr') if @app.view.EGS 
+		@app.view.EGS.setHeight( parseInt(e.target.dataset.incr) , 'incr') if @app.view.EGS
 		do @update
 	setHeightAbs: (e) ->
-		@app.view.EGS.setHeight( parseInt(e.target.dataset.setabs) , 'abs') if @app.view.EGS 
+		@app.view.EGS.setHeight( parseInt(e.target.dataset.setabs) , 'abs') if @app.view.EGS
 		do @update
 	setHeightRel: (e) ->
-		@app.view.EGS.setHeight( parseFloat(e.target.dataset.setrel) , 'rel') if @app.view.EGS 
+		@app.view.EGS.setHeight( parseFloat(e.target.dataset.setrel) , 'rel') if @app.view.EGS
 		do @update
 	setBackgroundColor: (e) ->
-		@app.view.EGS.setBackgroundColor( e.target.dataset.setc ) if @app.view.EGS 
+		@app.view.EGS.setBackgroundColor( e.target.dataset.setc ) if @app.view.EGS
 		do @update
 	resetView: (e) ->
 		do @app.view.EGS.resetView
@@ -47,10 +47,10 @@ module.exports = Backbone.View.extend
 		do @app.view.EGS.exportImage
 	exportImageTransparent: (e) ->
 		do @app.view.EGS.exportImageTransparent
-	
-	initialize: (app) -> 
+
+	initialize: (app) ->
 		@app = app
-		
+
 	update: ->
 		if (!@app.view.EGS) then return
 
@@ -63,11 +63,11 @@ module.exports = Backbone.View.extend
 		$('#turnMode', @$el).text if @app.view.EGS.turnRate > 0 then @app.view.EGS.turnRate + ' U/min' else "Manuell"
 		$('.rots li a', @$el).removeClass 'active'
 		$('.rot-' + @app.view.EGS.turnRate, @$el).addClass 'active'
-		
+
 	render: ->
 		if (!@app.view.EGS) then return
-			
-		tpl = 
+
+		tpl =
 			steps: @app.view.EGS.steps
 			step: @app.view.EGS.steps[@app.view.EGS.stepNo]
 			stepperMode: if @app.view.EGS.stepper > 0 then 'Automatisch' else "Manuell"
@@ -76,4 +76,3 @@ module.exports = Backbone.View.extend
 			turnRate: @app.view.EGS.turnRate
 			version: Package.version
 		@el.innerHTML = @template tpl
-		

@@ -3,7 +3,7 @@ THREE = require "THREE"
 Common = require "../Common"
 
 class Treppenstufen extends THREE.Geometry
-	
+
 	_Treppenstufen: (height) ->
 		BreiteStufe = 1250
 		TiefeStufe = 270
@@ -28,10 +28,10 @@ class Treppenstufen extends THREE.Geometry
 			st = new THREE.BoxGeometry(TiefeStufe,BreiteStufe,HoheStufe)
 			st.applyMatrix4 Helpers.matrix((i * dx) + (TiefeStufe / 2) + Common.RohrDurchmesserAussen, (BreiteStufe / 2) + ((1500 - BreiteStufe) / 2), (i * dh))
 			s.merge st
-		
+
 		s.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		s
-	
+
 	constructor: (length, x, y, height, direction) ->
 		super()
 
@@ -43,7 +43,7 @@ class Treppenstufen extends THREE.Geometry
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
 
 		@merge @_Treppenstufen(10 * length)
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*height, 10*y, 'Y', -direction)
-	
+
 module.exports = Treppenstufen

@@ -12,7 +12,7 @@ class Kantholz extends THREE.Geometry
 		k.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
 		k.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		k
-	
+
 	constructor: (length, x, y, h, direction, special) ->
 		super()
 
@@ -33,7 +33,7 @@ class Kantholz extends THREE.Geometry
 							rot = -1 * parseFloat(c[1].trim())
 							@applyMatrix4 Helpers.matrix(0, 0, 0, 'Z', rot / 90)
 						else throw new Error('Drehung muss RX, RY oder RZ sein')
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h + 100, 10*y)
-	
+
 module.exports = Kantholz
