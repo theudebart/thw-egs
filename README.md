@@ -145,6 +145,7 @@ Aktuell sind folgende Elemente implementiert:
 | FM        | Flanschmutter                      | nein                  | Drehungen (RX, RY, RZ)                        |
 |           |                                    |                       | _oUP_ wenn keine Unterlagsplatte              |
 | BPx/y/h   | Betonplatte (x * y * h cm)         | nein                  |                                               |
+| VM        | Verbindungsmuffe 10cm              | nein                  | Drehungen (RX, RY, RZ)                        |
 
 ### Daten ergänzen - eigene Konstruktionen
 

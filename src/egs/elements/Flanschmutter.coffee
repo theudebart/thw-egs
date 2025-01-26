@@ -5,17 +5,17 @@ Common = require "../Common"
 class Flanschmutter extends THREE.Geometry
 
 	_Flanschmutter: (up = 1) ->
-		r = new THREE.Geometry
-		r.merge Helpers.cylinder 25, 0, 40
-		r.merge Helpers.cylinder 80, 0, 10
+		f = new THREE.Geometry
+		f.merge Helpers.cylinder(25, 0, 40)
+		f.merge Helpers.cylinder(80, 0, 10)
 		if up is 1
-			r.translate 0, 0, 10
+			f.translate(0, 0, 10)
 			unterlagsplatte = new THREE.BoxGeometry(100, 100, 10)
-			unterlagsplatte.translate 0, 0, 5
-			r.merge unterlagsplatte
-		r.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
-		r.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
-		r
+			unterlagsplatte.translate(0, 0, 5)
+			f.merge unterlagsplatte
+		f.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
+		f.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
+		f
 
 	constructor: (x, y, h, special) ->
 		super()

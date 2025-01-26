@@ -1,19 +1,19 @@
 THREE = require "THREE"
 { Helpers } = require "../Helpers"
 
-class Ankerstab extends THREE.Geometry
+class Verbindungsmuffe extends THREE.Geometry
 
-	_Ankerstab: (length) ->
-		a = new THREE.Geometry
-		a.merge Helpers.cylinder(15, 0, length)
-		a.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
-		a.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
-		a
+	_Verbindungsmuffe: ->
+		v = new THREE.Geometry
+		v.merge Helpers.cylinder(20, 15, 100)
+		v.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
+		v.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
+		v
 
-	constructor: (length, x, y, h, special) ->
+	constructor: (x, y, h, special) ->
 		super()
 
-		@merge @_Ankerstab(10 * length)
+		@merge @_Verbindungsmuffe()
 
 		if special
 			for b in special.split('/')
@@ -33,4 +33,4 @@ class Ankerstab extends THREE.Geometry
 
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y)
 
-module.exports = Ankerstab
+module.exports = Verbindungsmuffe

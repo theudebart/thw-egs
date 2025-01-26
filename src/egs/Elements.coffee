@@ -16,6 +16,7 @@ EuroPalette = require("./elements/EuroPalette")
 Ankerstab = require("./elements/Ankerstab")
 Flanschmutter = require("./elements/Flanschmutter")
 Betonplatte = require("./elements/Betonplatte")
+Verbindungsmuffe = require("./elements/Verbindungsmuffe")
 
 class EGS_Elements
 	
@@ -128,6 +129,8 @@ class EGS_Elements
 			when "AnkSt300" then new Ankerstab 300, x, y, h, special
 
 			when "FM" then new Flanschmutter x, y, h, special
+
+			when "VM" then new Verbindungsmuffe x, y, h, special
 
 			else
 				if (name == null || name == undefined)
