@@ -13,6 +13,10 @@ Treppenstufen = require("./elements/Treppenstufen")
 Kantholz = require("./elements/Kantholz")
 Betonblockstein = require("./elements/Betonblockstein")
 EuroPalette = require("./elements/EuroPalette")
+Ankerstab = require("./elements/Ankerstab")
+Flanschmutter = require("./elements/Flanschmutter")
+Betonplatte = require("./elements/Betonplatte")
+Verbindungsmuffe = require("./elements/Verbindungsmuffe")
 
 class EGS_Elements
 
@@ -120,6 +124,14 @@ class EGS_Elements
 			when "BBS" then new Betonblockstein 120, 60, 60, x, y, h, direction, special
 			when "EPAL" then new EuroPalette x, y, h, direction
 
+			when "AnkSt75" then new Ankerstab 75, x, y, h, special
+			when "AnkSt150" then new Ankerstab 150, x, y, h, special
+			when "AnkSt300" then new Ankerstab 300, x, y, h, special
+
+			when "FM" then new Flanschmutter x, y, h, special
+
+			when "VM" then new Verbindungsmuffe x, y, h, special
+
 			else
 				if (name == null || name == undefined)
 					throw new Error('Unbekanntes Element')
@@ -131,6 +143,9 @@ class EGS_Elements
 					length = name.slice(2)
 					length = parseInt(length)
 					new Kantholz length, x, y, h, direction, special
+				else if (name.startsWith('BP'))
+					[length,width,height] = name.slice(2).split('/')
+					new Betonplatte parseFloat(length), parseFloat(width), parseFloat(height), x, y, h
 				else throw new Error('Unbekanntes Element')
 
 module.exports = EGS_Elements
