@@ -24,18 +24,18 @@ class Belag extends THREE.Geometry
 			curveSegments: Helpers.DETAIL
 		bk.applyMatrix4 Helpers.matrix(x, 0, 55, 'Y', 1)
 		bk
-	
+
 	_BelagRahmen: (length, b) ->
 		o = 50
 		vertices = [
 			# oberkante
-			[ 0, 45,  o],[  b, 45,  o],[  b, 45,  length-o],[ 0, 45,  length-o], 
+			[ 0, 45,  o],[  b, 45,  o],[  b, 45,  length-o],[ 0, 45,  length-o],
 			# unterkante
-			[ 0,-30,  o],[  b,-30,  o],[  b,-30,  length-o],[ 0,-30,  length-o], 
+			[ 0,-30,  o],[  b,-30,  o],[  b,-30,  length-o],[ 0,-30,  length-o],
 			# unterkante innen
-			[ 5,-30,o+5],[b-5,-30,o+5],[b-5,-30,length-o-5],[ 5,-30,length-o-5], 
+			[ 5,-30,o+5],[b-5,-30,o+5],[b-5,-30,length-o-5],[ 5,-30,length-o-5],
 			# oberkante innen
-			[ 5, 40,o+5],[b-5, 40,o+5],[b-5, 40,length-o-5],[ 5, 40,length-o-5], 
+			[ 5, 40,o+5],[b-5, 40,o+5],[b-5, 40,length-o-5],[ 5, 40,length-o-5],
 		]
 		faces = [
 			[ 0, 2, 1], [ 0, 3, 2], [12,13,14], [12,14,15],
@@ -47,7 +47,7 @@ class Belag extends THREE.Geometry
 			[10,11,15], [10,15,14], [11, 8,12], [11,12,15],
 		]
 		new CustomGeometry vertices, faces
-	
+
 	_Belag: (length, w, x = 0) ->
 		b = new THREE.Geometry
 		b.merge @_BelagKlammer(1), Helpers.matrix(  60,0,0)
@@ -57,7 +57,7 @@ class Belag extends THREE.Geometry
 		b.merge @_BelagKlammer(1), Helpers.matrix(w-60,0,length, 'Y', 2)
 		b.applyMatrix4 Helpers.matrix(55+x, 0, 0)
 		b
-	
+
 	constructor: (length, x, y, h, direction, special) ->
 		super()
 
@@ -66,16 +66,16 @@ class Belag extends THREE.Geometry
 		w = special[0]
 		if special.length >= 2 and parseInt special[1]
 			o = parseInt special[1]
-		
+
 		for b in w.split(',')
 			@merge @_Belag(10*length, 10*b, o)
 			o += 10*b + 5
-		
+
 		switch direction
 			when  "X" then @applyMatrix4 Helpers.matrix(10*x + 10*length, 10*h, 10*y, 'Y', -1)
 			when  "Y" then @applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y)
 			when "-X" then @applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y, 'Y', 1)
 			when "-Y" then @applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y+10*length, 'Y', 2)
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
-	
+
 module.exports = Belag

@@ -7,21 +7,21 @@ class EGS_Common_Elements
 	@RohrDurchmesserAussen = 48.3
 	@RohrDurchmesserInnen = 45.1
 	@TellerHoehe = 9
-	
+
 	@rohr: (length) ->
 		Helpers.cylinder @RohrDurchmesserAussen, @RohrDurchmesserInnen, length
-	
+
 	@teller: ->
 		Helpers.cylinder @TellerDurchmesser, @RohrDurchmesserAussen, @TellerHoehe
-	
+
 	@rohrverbinder: ->
 		rv = Helpers.cylinder 45, 30, 400
 		rv.applyMatrix4 Helpers.matrix(0,0,-200)
 		rv
-	
+
 	@keilKupplungRiegel: ->
 		vertices = [
-			[25, 7, 38], [26,0, 38], [25,-7, 38], 
+			[25, 7, 38], [26,0, 38], [25,-7, 38],
 			[25, 7, 11], [26,0, 11], [25,-7, 11],
 			[25, 7, -1], [26,0, -1], [25,-7, -1],
 			[25, 7,-35], [26,0,-35], [25,-7,-35], # 12
@@ -29,9 +29,9 @@ class EGS_Common_Elements
 			[65, 22, 11], [65,-22, 11],
 			[65, 22, -1], [65,-22, -1],
 			[65, 12,-24], [65,-12,-24], # 20
-			[77,  0, 24], [77,-17, 17], 
-			[77,-24,  0], [77,-17,-17], 
-			[77,  0,-24], [77, 17,-17], 
+			[77,  0, 24], [77,-17, 17],
+			[77,-24,  0], [77,-17,-17],
+			[77,  0,-24], [77, 17,-17],
 			[77, 24,  0], [77, 17, 17]
 		]
 		faces = [
@@ -50,11 +50,11 @@ class EGS_Common_Elements
 			[26,16,14], [26,14,27], [27,14,12], [27,12,20]
 		]
 		new CustomGeometry vertices, faces
-	
+
 	@keilKupplungDiagonale: (d, r = 1)->
 		z = 35
 		vertices = [
-			[25, 7, 38], [26,0, 38], [25,-7, 38], 
+			[25, 7, 38], [26,0, 38], [25,-7, 38],
 			[25, 7, 11], [26,0, 11], [25,-7, 11], # 6
 			[25, 7, -1], [26,0, -1], [25,-7, -1],
 			[25, 7,-35], [26,0,-35], [25,-7,-35], # 12
@@ -62,9 +62,9 @@ class EGS_Common_Elements
 			[65, 22, 11], [65,-22, 11], # 16
 			[65, 22, -1], [65,-22, -1],
 			[65, 12,-24], [65,-12,-24], # 20
-			[65,  1*r, 20], [65,  1*r,-20], 
+			[65,  1*r, 20], [65,  1*r,-20],
 			[65, 11*r,-20], [65, 11*r, 20], # 24
-			[65+z,  1*r+z*r, 20], [65+z,  1*r+z*r,-20], 
+			[65+z,  1*r+z*r, 20], [65+z,  1*r+z*r,-20],
 			[65+z-5, 6*r+z*r,-20], [65+z-5, 6*r+z*r, 20]
 		]
 		faces = [
@@ -74,7 +74,7 @@ class EGS_Common_Elements
 			[ 7, 6,10], [10, 6, 9], [ 8, 7,11], [11, 7,10], # innen
 			[ 4, 3,14], [ 4,14,15], [ 5, 4,15], # zwischen
 			[ 6, 7,16], [ 7,17,16], [ 7, 8,17], # zwischen
-			[14,17,15], [14,16,17], [14,15,17], [14,17,16], 
+			[14,17,15], [14,16,17], [14,15,17], [14,17,16],
 			[ 3, 0,14], [ 0,12,14], [16, 9, 6], [18, 9,16], #links
 			[ 2, 5,15], [ 2,15,13], [17, 8,11], [17,11,19],
 			[12,13,14], [13,15,14], [16,17,18], [17,19,18], # HINTEN
@@ -89,7 +89,7 @@ class EGS_Common_Elements
 				faces.push fd
 			else
 				faces.push [fd[1], fd[0], fd[2]]
-		
+
 		kkd = new CustomGeometry vertices, faces
 		kkd.applyMatrix4 Helpers.matrix(0,0,0, 'Z', .5*r*d)
 		kkd

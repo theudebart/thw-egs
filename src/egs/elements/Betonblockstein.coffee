@@ -3,7 +3,7 @@ THREE = require "THREE"
 Common = require "../Common"
 
 class Betonblockstein extends THREE.Geometry
-	
+
 	_Noppe: (size, height) ->
 		points = [
 			# Unten
@@ -32,14 +32,14 @@ class Betonblockstein extends THREE.Geometry
 			for i in [0..(x - 1)]
 				for n in [0..(y - 1)]
 					k.merge @_Noppe(150, 75), Helpers.matrix(
-						(i * 2 * 150) - width / 2 + 75 + (width - (x * 150) - ((x - 1) * 150)) / 2, 
+						(i * 2 * 150) - width / 2 + 75 + (width - (x * 150) - ((x - 1) * 150)) / 2,
 						height/2 ,
 						(n * 2 * 150) - width / 2 + 75 + (width - (y * 150) - ((y - 1) * 150)) / 2
 					)
 
 		k.applyMatrix4 Helpers.matrix(0,height/2,0)
 		#k.applyMatrix4 Helpers.matrix(length/2,height/2,width/2)
-	
+
 	constructor: (length, width, height, x, y, h, direction, special) ->
 		super()
 
@@ -68,7 +68,7 @@ class Betonblockstein extends THREE.Geometry
 							@applyMatrix4 Helpers.matrix(0, 0, 0, 'Z', rot / 90)
 						else throw new Error('Drehung muss RX, RY oder RZ sein')
 
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h + 50, 10*y, 'Y', -direction)
-	
+
 module.exports = Betonblockstein

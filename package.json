@@ -1,6 +1,6 @@
 {
 	"name": "thw-egs",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "Visualization of EGS constructions",
 	"private": true,
 	"scripts": {
@@ -16,6 +16,10 @@
 		{
 			"name": "Marcel Patzsch",
 			"url": "https://github.com/theudebart"
+		},
+		{
+			"name": "Marvin Zeising",
+			"url": "https://github.com/MarvinZeising"
 		}
 	],
 	"license": "MIT",

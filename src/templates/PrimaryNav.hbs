@@ -1,43 +1,44 @@
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	{{#if item}}
-	<li class="navbar-text sourceLoader">
-		Konstruktion:
-	</li>
-	<li class="nav-item dropdown sourceDisplay">
-		<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ auswahl }} <span class="caret"></span></a>
-		<ul id="constructionList" class="dropdown-menu">
-			{{#each item}}
-			<li><a class="dropdown-item" href="#{{ sheet }}">{{ name }}</a></li>
-			{{/each}}
-		</ul>
-	</li>
-	{{#if loading}}
-	<li class="nav-item sourceLoader spinner">
-		<div class="bounce1"></div>
-		<div class="bounce2"></div>
-		<div class="bounce3"></div>
-	</li>
-	<li class="navbar-text sourceLoader">
-		wird geladen...
-	</li>
-	{{/if}}
+		<li class="navbar-text sourceLoader">
+			Konstruktion:
+		</li>
+		<li class="nav-item dropdown sourceDisplay">
+			<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ auswahl }} <span class="caret"></span></a>
+			<ul id="constructionList" class="dropdown-menu">
+				{{#each item}}
+				<li><a class="dropdown-item" href="#{{ sheet }}">{{ name }}</a></li>
+				{{/each}}
+			</ul>
+		</li>
+		{{#if loading}}
+			<li class="nav-item sourceLoader spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</li>
+			<li class="navbar-text sourceLoader">
+				wird geladen...
+			</li>
+		{{/if}}
 	{{else}}
-	{{#if loading}}
-	<li class="nav-item sourceLoader spinner">
-		<div class="bounce1"></div>
-		<div class="bounce2"></div>
-		<div class="bounce3"></div>
-	</li>
-	<li class="navbar-text sourceLoader">
-		Konstruktionen werden geladen...
-	</li>
-	{{else}}
-	<li class="navbar-text sourceLoader">
-		<b class="text-danger">Keine Datenquelle ausgewählt!</b>
-	</li>
-	{{/if}}
+		{{#if loading}}
+			<li class="nav-item sourceLoader spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</li>
+			<li class="navbar-text sourceLoader">
+				Konstruktionen werden geladen...
+			</li>
+		{{else}}
+			<li class="navbar-text sourceLoader">
+				<b class="text-danger">Keine Datenquelle ausgewählt!</b>
+			</li>
+		{{/if}}
 	{{/if}}
 </ul>
+
 <form class="d-flex" role="search">
 	<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dataSourceModal">Datenquelle wechseln</button>
 </form>

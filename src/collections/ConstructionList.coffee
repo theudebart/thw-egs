@@ -7,14 +7,13 @@ module.exports = class ConstructionList extends Backbone.Collection
 	selected: null
 	setSelected: (ds) ->
 		console.log "CL select: ", ds, @selected
-		return if ds is @selected 
+		return if ds is @selected
 		@trigger "unselect", @selected if @selected
 		@selected = ds
 		console.log "CL triggered select"
 		@trigger "select", @selected
 		@trigger "sync" if @selected.fetched
-		
-	
+
 	initialize: (models, options)->
 		@app = options.app
 #		console.log "init ConstructionList"
