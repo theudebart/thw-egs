@@ -3,7 +3,7 @@ THREE = require "THREE"
 Common = require "../Common"
 
 class Traverse extends THREE.Geometry
-	
+
 	_Traverse: (length) ->
 		AbstandVonVertikale = 150
 		AbstandVonVertikalstreben = Common.RohrDurchmesserAussen
@@ -40,10 +40,10 @@ class Traverse extends THREE.Geometry
 			f = Common.rohr(Math.sqrt(Math.pow(c/2,2) + Math.pow(500,2)))
 			f.applyMatrix4 Helpers.matrix((i * b) + AbstandVonVertikale + AbstandVonVertikalstreben + c + (2 * Common.RohrDurchmesserAussen), 0, -500, 'Y', -1 * (Math.atan((c/2)/500) / Helpers.D90))
 			t.merge f
-		
+
 		t.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		t
-	
+
 	constructor: (length, x, y, h, direction) ->
 		super()
 
@@ -55,7 +55,7 @@ class Traverse extends THREE.Geometry
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
 
 		@merge @_Traverse(10 * length)
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y, 'Y', -direction)
-	
+
 module.exports = Traverse

@@ -3,7 +3,7 @@ THREE = require "THREE"
 Common = require "../Common"
 
 class Treppenwange extends THREE.Geometry
-	
+
 	_Treppenwange: (height, side) ->
 		TiefeStufe = 270
 		HoheStufe = 50
@@ -44,7 +44,7 @@ class Treppenwange extends THREE.Geometry
 
 		w.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		w
-	
+
 	constructor: (length, side, x, y, height, direction) ->
 		super()
 
@@ -56,7 +56,7 @@ class Treppenwange extends THREE.Geometry
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
 
 		@merge @_Treppenwange(10 * length, side)
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*height, 10*y, 'Y', -direction)
-	
+
 module.exports = Treppenwange

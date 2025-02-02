@@ -19,7 +19,7 @@ Betonplatte = require("./elements/Betonplatte")
 Verbindungsmuffe = require("./elements/Verbindungsmuffe")
 
 class EGS_Elements
-	
+
 	getGeometry: (element) ->
 		name = element.get 'element'
 		x = element.get 'x'
@@ -27,7 +27,7 @@ class EGS_Elements
 		h = element.get 'h'
 		direction = element.get 'direction'
 		special = element.get 'special'
-		
+
 		switch name
 			when "F40" then new GewindeFussPlatte 40, x, y, h, special
 			when "F60" then new GewindeFussPlatte 60, x, y, h, special
