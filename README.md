@@ -57,7 +57,7 @@ Der Aufbau nach diesem Schema sollte überwiegend selbsterklärend sein, deshalb
 Aktuell sind folgende Elemente implementiert:
 
 | Kürzel    | Element                            | Richtung erforderlich | Besonderheit                                  |
-| --------- | ---------------------------------- | --------------------- | --------------------------------------------- |
+|-----------|------------------------------------|-----------------------|-----------------------------------------------|
 | AnfSt     | Anfangsstück                       | zukünftig (Bohrung)   |                                               |
 | V50       | Vertikalstiel 50 cm                | zukünftig (Bohrung)   | _oRV_ wenn kein Rohrverbinder                 |
 | V100      | Vertikalstiel 100 cm               | zukünftig (Bohrung)   | _oRV_ wenn kein Rohrverbinder                 |
@@ -139,6 +139,13 @@ Aktuell sind folgende Elemente implementiert:
 |           |                                    |                       | Vorgeschlagene Farbe: #A1662F                 |
 | EPAL      | Euro-Palette                       | ja                    | Vorgeschlagene Farbe: #A1662F                 |
 | BBS       | Betonblockstein (120 x 60 x 60 cm) | ja                    | Vorgeschlagene Farbe: #917f69                 |
+| AnkSt75   | Ankerstab 75cm                     | nein                  | Drehungen (RX, RY, RZ)                        |
+| AnkSt150  | Ankerstab 150cm                    | nein                  | Drehungen (RX, RY, RZ)                        |
+| AnkSt300  | Ankerstab 300cm                    | nein                  | Drehungen (RX, RY, RZ)                        |
+| FM        | Flanschmutter                      | nein                  | Drehungen (RX, RY, RZ)                        |
+|           |                                    |                       | _oUP_ wenn keine Unterlagsplatte              |
+| BPx/y/h   | Betonplatte (x * y * h cm)         | nein                  |                                               |
+| VM        | Verbindungsmuffe 10cm              | nein                  | Drehungen (RX, RY, RZ)                        |
 
 ### Daten ergänzen - eigene Konstruktionen
 

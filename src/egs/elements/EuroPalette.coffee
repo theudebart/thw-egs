@@ -31,7 +31,7 @@ class EuroPalette extends THREE.Geometry
 		p.merge new THREE.BoxGeometry(1200  ,22   ,100 ), Helpers.matrix( 0          ,122 + 22 / 2 , -400 + 50   )
 
 		p
-	
+
 	constructor: (x, y, h, direction) ->
 		super()
 
@@ -43,7 +43,7 @@ class EuroPalette extends THREE.Geometry
 			when "-X" then direction = 2
 			when "-Y" then direction = 3
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h + 50, 10*y, 'Y', -direction)
-	
+
 module.exports = EuroPalette

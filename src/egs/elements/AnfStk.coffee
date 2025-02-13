@@ -11,12 +11,12 @@ class AnfStk extends THREE.Geometry
 		a.merge Helpers.cylinder(55,49,170), Helpers.matrix(0,0,95)
 		a.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		a
-	
+
 	constructor: (x, y, h) ->
 		super()
 
 		@merge @_AnfStk()
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y)
-	
+
 module.exports = AnfStk

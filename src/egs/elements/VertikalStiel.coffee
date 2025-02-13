@@ -12,7 +12,7 @@ class VertikalStiel extends THREE.Geometry
 		v.merge Common.rohrverbinder(), Helpers.matrix(0,0,length) if rv is 1
 		v.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		v
-	
+
 	constructor: (length, x, y, h, special) ->
 		super()
 
@@ -20,11 +20,11 @@ class VertikalStiel extends THREE.Geometry
 		rv = 1
 		if special
 			for s in special.split ','
-				direction = 2 if parseInt(s) < 0 or (s and s[0] is 'n') or s is '-' 
+				direction = 2 if parseInt(s) < 0 or (s and s[0] is 'n') or s is '-'
 				rv = 0 if s[0] is 'o'
 
 		@merge @_VertikalStiel(10 * length, rv)
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y, 'X', direction)
-	
+
 module.exports = VertikalStiel

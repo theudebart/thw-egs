@@ -2,19 +2,30 @@ THREE = require "THREE"
 { Helpers } = require "../Helpers"
 Common = require "../Common"
 
-class Geruestrohr extends THREE.Geometry
+class Flanschmutter extends THREE.Geometry
 
-	_Geruestrohr: (length) ->
-		r = new THREE.Geometry
-		r.merge Common.rohr(length)
-		r.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
-		r.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
-		r
+	_Flanschmutter: (up = 1) ->
+		f = new THREE.Geometry
+		f.merge Helpers.cylinder(25, 0, 40)
+		f.merge Helpers.cylinder(80, 0, 10)
+		if up is 1
+			f.translate(0, 0, 10)
+			unterlagsplatte = new THREE.BoxGeometry(100, 100, 10)
+			unterlagsplatte.translate(0, 0, 5)
+			f.merge unterlagsplatte
+		f.applyMatrix4 Helpers.matrix(0,0,0, 'Y', 1)
+		f.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
+		f
 
-	constructor: (length, x, y, h, direction, special) ->
+	constructor: (x, y, h, special) ->
 		super()
 
-		@merge @_Geruestrohr(10 * length)
+		up = 1
+		if special
+			for s in special.split '/'
+				up = 0 if s[0] is 'o'
+
+		@merge @_Flanschmutter(up)
 
 		if special
 			for b in special.split('/')
@@ -34,4 +45,4 @@ class Geruestrohr extends THREE.Geometry
 
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y)
 
-module.exports = Geruestrohr
+module.exports = Flanschmutter

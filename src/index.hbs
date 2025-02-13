@@ -7,20 +7,20 @@
 		<style>
 			#display { position: fixed; top: 50px; left:0; background: #fed; right:0; bottom: 50px; }
 			.spinner { width: 70px; text-align: center; line-height:1; }
-			.spinner > div { 
-				width: 16px; height: 16px; background-color: #333; 
+			.spinner > div {
+				width: 16px; height: 16px; background-color: #333;
 				border-radius: 100%; display: inline-block;
-				-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both; 
+				-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 				animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 			}
 			.spinner .bounce1 { -webkit-animation-delay: -0.32s; animation-delay: -0.32s; }
 			.spinner .bounce2 { -webkit-animation-delay: -0.16s; animation-delay: -0.16s; }
-			@-webkit-keyframes sk-bouncedelay { 
-				0%, 80%, 100% { -webkit-transform: scale(0) } 
-				40% { -webkit-transform: scale(1.0) } 
+			@-webkit-keyframes sk-bouncedelay {
+				0%, 80%, 100% { -webkit-transform: scale(0) }
+				40% { -webkit-transform: scale(1.0) }
 			}
-			@keyframes sk-bouncedelay { 
-				0%, 80%, 100% { -webkit-transform: scale(0); transform: scale(0); } 
+			@keyframes sk-bouncedelay {
+				0%, 80%, 100% { -webkit-transform: scale(0); transform: scale(0); }
 				40% {  -webkit-transform: scale(1.0); transform: scale(1.0); }
 			}
 		</style>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 			</nav>
-			
+
 			<div id="display">
 				<div aria-live="polite" aria-atomic="true">
 					<div id="toast-container" class="toast-container position-rel bottom-0 end-0 p-3">
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<nav class="navbar navbar-expand-lg fixed-bottom bg-body-tertiary">
 				<div class="container-fluid">
 					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#secondaryNav" aria-controls="secondaryNav" aria-expanded="false">
@@ -70,8 +70,8 @@
 							Die eingegebene Datenquelle ist kein gültiger Link zu einer Google Tabelle!
 						</div>
 						<p>
-							Die Datenquelle muss eine URL zu einer Google Tabelle sein. 
-							Diese Tabelle muss nach dem Muster unter <a target="_blank" href="https://docs.google.com/spreadsheets/d/1z0wPbfVoUCu6buGLWJPDcxtESDJJXNRvjhKQt6fDDqQ/edit#gid=0">https://docs.google.com/spreadsheets/d/1z...qQ/edit#gid=0</a> aufgebaut sein. 
+							Die Datenquelle muss eine URL zu einer Google Tabelle sein.
+							Diese Tabelle muss nach dem Muster unter <a target="_blank" href="https://docs.google.com/spreadsheets/d/1z0wPbfVoUCu6buGLWJPDcxtESDJJXNRvjhKQt6fDDqQ/edit#gid=0">https://docs.google.com/spreadsheets/d/1z...qQ/edit#gid=0</a> aufgebaut sein.
 							Sie enthält eine Übersicht mehrerer Konstruktionen mit Links zur der genauen Spezifikation.
 						</p>
 						<div class="input-group">

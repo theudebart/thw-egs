@@ -3,7 +3,7 @@ THREE = require "THREE"
 Common = require "../Common"
 
 class Riegel extends THREE.Geometry
-	
+
 	_Riegel: (length) ->
 		r = Helpers.cylinder Common.RohrDurchmesserAussen, Common.RohrDurchmesserInnen, length - 150
 		r.applyMatrix4 Helpers.matrix(75, 0, 0, 'Y', 1)
@@ -11,7 +11,7 @@ class Riegel extends THREE.Geometry
 		r.merge Common.keilKupplungRiegel(), Helpers.matrix(length, 0, 0, 'Z', 2)
 		r.applyMatrix4 Helpers.matrix(0,0,0, 'X', -1)
 		r
-	
+
 	constructor: (length, x, y, h, direction) ->
 		super()
 
@@ -23,7 +23,7 @@ class Riegel extends THREE.Geometry
 			else throw new Error('Drehrichtung muss X, Y oder -X, -Y sein')
 
 		@merge @_Riegel(10 * length)
-		
+
 		@applyMatrix4 Helpers.matrix(10*x, 10*h, 10*y, 'Y', -direction)
-	
+
 module.exports = Riegel
