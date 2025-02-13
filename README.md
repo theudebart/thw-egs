@@ -12,11 +12,11 @@ Neben Fehlerbehebungen wurden auch neue Funktionen hinzugefügt.
 
 ## Zweck und Nutzen
 
-Der Aufbau von Gerüstkonstuktionen ist nicht immer trivial, deshalb kann eine Visualsierung die theoretische Ausbildung unterstützen. Der Aufbau kann in eine Vielzahl von Schritten zerlegt und Bauteile farblich hervorgehoben werden. Die automatische Rotation bzw. die manuelle Betrachtung von allen Seiten erlauben ein schnelleres Verständnis.
+Der Aufbau von Gerüstkonstruktionen ist nicht immer trivial, deshalb kann eine Visualisierung die theoretische Ausbildung unterstützen. Der Aufbau kann in eine Vielzahl von Schritten zerlegt und Bauteile farblich hervorgehoben werden. Die automatische Rotation bzw. die manuelle Betrachtung von allen Seiten erlauben ein schnelleres Verständnis.
 
 Wichtig ist, dass die Visualisierung in erster Linie ein Hilfsmittel für die Ausbildung ist, z.B. um verschiedene Aufbauweisen relativ einfach zu vergleichen. Die hinterlegten Pläne dürfen aber keinesfalls blind für reale Aufbauten genutzt werden.
 
-In einem weiteren Entwicklungsschritt könnten aus der Aufbauanleitung auch Materiallisten abgeleitet werden. Zunächst, ob die Konstruktion mit dem vorhanden Material lösbar ist, und im zweiten Schritt in welcher Reihenfolge welches Teile benötigt werden.
+In einem weiteren Entwicklungsschritt könnten aus der Aufbauanleitung auch Materiallisten abgeleitet werden. Zunächst, ob die Konstruktion mit dem vorhanden Material lösbar ist, und im zweiten Schritt in welcher Reihenfolge welches Teil benötigt werden.
 
 ## Bedienung
 
@@ -30,9 +30,9 @@ Im unteren Teil der Apo befinden sich die Bedienelemente für die Aufbauschritte
 
 **Höhe:** Die Normalansicht zeigt das Modell auf halber Höhe. Mit diesen Bedienelementen lässt sich die Ansicht auf andere Betrachtungshöhen umschalten.
 
-## Hinterlegen von Konstuktionen
+## Hinterlegen von Konstruktionen
 
-Die Datenquelle ist eine normale Google-Tabelle mit einer Liste von Konstuktionen. Die Konstuktionen ansich werden dann in den weiteren Blättern dieser Tabellen-Datei definiert.
+Die Datenquelle ist eine normale Google-Tabelle mit einer Liste von Konstruktionen. Die Konstruktionen an sich werden dann in den weiteren Blättern dieser Tabellen-Datei definiert.
 
 Beispieldatei: https://docs.google.com/spreadsheets/d/1z0wPbfVoUCu6buGLWJPDcxtESDJJXNRvjhKQt6fDDqQ/edit#gid=0
 
