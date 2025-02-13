@@ -5,7 +5,7 @@
 	</li>
 	<li class="nav-item dropdown sourceDisplay">
 		<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ auswahl }} <span class="caret"></span></a>
-		<ul id="constructionList" class="dropdown-menu">
+		<ul id="constructionList" class="dropdown-menu" style="max-height: 445px; overflow-y: auto;">
 			{{#each item}}
 			<li><a class="dropdown-item" href="#{{ sheet }}">{{ name }}</a></li>
 			{{/each}}
